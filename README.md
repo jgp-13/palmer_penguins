@@ -11,7 +11,7 @@ Welcome to my penguin clustering project! In this analysis, I explored real biol
 ## 📦 Dataset Overview
 
 The dataset (`penguins.csv`) was collected by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER. It contains biometric measurements of penguins from three known species: **Adelie**, **Chinstrap**, and **Gentoo** — although species labels were not included.
-
+* 
 > ![Illustration of the three penguin species](./figures/lter_penguins.png)
 
 These species are known to inhabit the region, and the goal of this project is to uncover natural groupings based on their physical measurements.
@@ -98,15 +98,27 @@ When I plotted the `sex_MALE` variable alongside the cluster labels, something u
 
 > ![Sex vs. label k=5](./plots/label_sex_k5.png)
 
-This overlap may have been caused by **small males** from one species being grouped with **larger females** from another. It raised a compelling question: Had I completely missed the third species — or perhaps stumbled upon a fourth? 🔬
+This overlap might be due to **small males** from one species clustering with **larger females** from another. It raised a compelling question: Had I completely missed the third species — or maybe even stumbled upon a **fourth**? 🔍🐧
 
-Curious, I ran clustering again with `k = 6` (hoping the mix would disappear), but the overlap remained. The same happened at `k = 7`. It wasn’t until I tried **`k = 8`** that the clusters finally began separating more cleanly by sex — just like the elbow plot had subtly suggested! 👀
+Curious, I tried clustering again with `k = 6`, hoping the mix would disappear. It didn’t. Same result at `k = 7`. So I pushed it further — **what about `k = 8`**?
 
 > ![Sex vs. label k=8](./plots/label_sex_k8.png)
 
-So now I have to wonder — is this a hint at an **undiscovered penguin species**? Or just a fascinating case of biological variation and overlap? 🧬
+At `k = 8`, the sex-based overlap seemed to vanish. Could this mean there are actually **four species**, not just three? 🤔 To dig deeper, I used **t-SNE** to project the clusters into two dimensions and get a better sense of how the groups separate visually. :chart_with_upwards_trend:
 
-Of course, it’s also possible that this is a **statistical artifact** caused by limited sample size. Either way, it’s an intriguing outcome — like two penguin worlds colliding! 🐧💥🐧
+In the t-SNE map with **five clusters**, we can clearly see five distinct groups. One of them shows a **subtle internal separation**, which might reflect the similarity between two subgroups the model wasn’t able to split. There's also some evidence of the algorithm **stretching the borders** of another cluster and misplacing a few points. 📏📊
+
+> ![t-SNE map with k=5](./plots/tsne_map_5.png)
+
+Now take a look at the t-SNE map for **`k = 8`**...
+
+> ![t-SNE map with k=8](./plots/tsne_map_8.png)
+
+Here, the map looks **messy**. Several clusters are overlapping or spread in ways that don't align with clear group boundaries. What initially looked like a new species turns out to be **just noise or natural variation**. :chart_with_downwards_trend:
+
+So, are there four species? Most likely not. What we saw was probably just **intra-species variation**, especially between males and females that share similar features. 🙃
+
+Still — a fun detour, and a reminder that sometimes, the data keeps its secrets. 🧬🐧💥
 
 ---
 
@@ -130,7 +142,7 @@ This project demonstrates how unsupervised learning can uncover natural grouping
 
 ---
 
-## 🙌 Acknowledgements
+* ## 🙌 Acknowledgements
 
 - **Dataset**: [Palmer Station LTER](https://pal.lternet.edu/)
 - **Illustration**: [Allison Horst – penguins art](https://github.com/allisonhorst/penguins)
