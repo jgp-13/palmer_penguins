@@ -11,8 +11,9 @@ Welcome to my penguin clustering project! In this analysis, I explored real biol
 ## 📦 Dataset Overview
 
 The dataset (`penguins.csv`) was collected by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER. It contains biometric measurements of penguins from three known species: **Adelie**, **Chinstrap**, and **Gentoo** — although species labels were not included.
-* 
-> ![Illustration of the three penguin species](./figures/lter_penguins.png)
+
+<img src="./figures/lter_penguins.png" alt="Illustration of the three penguin species" width="600"/> 
+
 
 These species are known to inhabit the region, and the goal of this project is to uncover natural groupings based on their physical measurements.
 
@@ -22,7 +23,7 @@ These species are known to inhabit the region, and the goal of this project is t
 The key biometric features recorded in the dataset are listed below:
 
 
-> ![Bill dimensions of a penguin](./figures/culmen_depth.png)
+<img src="./figures/culmen_depth.png" alt="Bill dimensions of a penguin" width="500"/>
 
 The dataset includes several biometric features measured from each penguin. The image above shows how **culmen length** and **culmen depth** are defined — terms used in the dataset to describe bill dimensions.
 
