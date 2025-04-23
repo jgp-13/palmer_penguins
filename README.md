@@ -85,9 +85,9 @@ Here’s a random sample of penguins from the clustered dataset:
 
 ## 🔍 Visualising Cluster Distributions
 
-To better understand how each feature contributed to the clustering, I created scatter plots showing the distribution of each variable across the five clusters.
+To better understand how each feature contributed to the clustering, I created box plots showing the distribution of each variable across the five clusters.
 
-> ![Cluster Feature Matrix](./plots/matrix_feat_labels.png)
+> ![Cluster Feature Matrix](./plots/matrix_feat_labels_boxs.png)
 
 These visualisations helped highlight how flipper length, culmen size, and body mass varied between clusters — possibly corresponding to different species or sex-based differences.
 
@@ -97,13 +97,13 @@ These visualisations helped highlight how flipper length, culmen size, and body 
 
 When I plotted the `sex_MALE` variable alongside the cluster labels, something unexpected showed up — in **Cluster 4**, both males ♂️ and females ♀️ appeared! 🤯
 
-> ![Sex vs. label k=5](./plots/label_sex_k5.png)
+> ![Sex vs. label k=5](./plots/label_sex_k5_stripplot.png)
 
 This overlap might be due to **small males** from one species clustering with **larger females** from another. It raised a compelling question: Had I completely missed the third species — or maybe even stumbled upon a **fourth**? 🔍🐧
 
 Curious, I tried clustering again with `k = 6`, hoping the mix would disappear. It didn’t. Same result at `k = 7`. So I pushed it further — **what about `k = 8`**?
 
-> ![Sex vs. label k=8](./plots/label_sex_k8.png)
+> ![Sex vs. label k=8](./plots/label_sex_k8_stripplot.png)
 
 At `k = 8`, the sex-based overlap seemed to vanish. Could this mean there are actually **four species**, not just three? 🤔 To dig deeper, I used **t-SNE** to project the clusters into two dimensions and get a better sense of how the groups separate visually. :chart_with_upwards_trend:
 
