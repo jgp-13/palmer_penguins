@@ -147,4 +147,4 @@ This project demonstrates how unsupervised learning can uncover natural grouping
 
 - **Dataset**: [Palmer Station LTER](https://pal.lternet.edu/)
 - **Illustration**: [Allison Horst – penguins art](https://github.com/allisonhorst/penguins)
-- Built with ❤️ using Python, pandas, scikit-learn, and matplotlib
+- 🧠 Powered by Python, pandas, scikit-learn & matplotlib.
